@@ -1,0 +1,7 @@
+Follow the names established on the FDD.
+
+To name components use:
+    Name.component.jsx
+
+To name components styles:
+    Name.styles.jsx

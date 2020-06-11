@@ -17,16 +17,22 @@ function PromotionPage(){
 
   useEffect(() => {
     getPromotion();
-  }, [promotionList]);
+  }, []);
 
 
   return(
-      <Styles.PromotionList>
-          {promotionList.map(promo =>( 
-            <Styles.PromotionItem>
-              {promo.description}
-            </Styles.PromotionItem>))}          
+    <Styles.Container>
+      <Styles.Nav>
+        <span>Link Prueba</span>
+        <span>Buscador Prueba</span>
+      </Styles.Nav>
+        <Styles.PromotionList>
+            {promotionList.map(promo =>( 
+              <Styles.PromotionItem key={promo.promotionID}>              
+                {promo.description}
+              </Styles.PromotionItem>))}          
         </Styles.PromotionList>
+    </Styles.Container>
   )
 }
 

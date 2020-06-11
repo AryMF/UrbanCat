@@ -9,7 +9,7 @@ const PromotionList = styled.div`
   margin: 0 auto;
   padding-top: 30rem;
 `
-const PromotionItem = styled.div`
+const PromotionItem = styled.li`
   background-color: white;
   height: 150px;
   width: 100%;

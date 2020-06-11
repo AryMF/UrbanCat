@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import {
@@ -154,6 +155,7 @@ function Statistics() {
 			<h2>Statistics</h2>
 		</div>
 	);
+
 }
 
 export default App;

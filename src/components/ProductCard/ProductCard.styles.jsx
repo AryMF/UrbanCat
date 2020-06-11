@@ -1,29 +1,80 @@
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ProductCardConatiner = styled.div `
-    /* background-color: cadetblue;
     width: 100%;
-    min-width: 280px;
-    height: fit-content; */
+    min-width: 250px;
+    height: fit-content;
 
-    /* display: flex;
+    display: flex;
     flex-direction: column;
-    align-items: center; */
-
-    display: grid;
-    grid-template-columns: 10px repeat(6, 1fr) 10px;
-    grid-template-rows: 10px auto 10px repeat(5, auto) repeat(3, auto) 10px;
-    grid-row-gap: 5px;
-    grid-template-areas: ". . . . . . . ." ". deleteButton . . . . topButton ." ". . . . . . . ." ". img img img img img img ." ". img img img img img img ." ". img img img img img img ." ". img img img img img img ." ". img img img img img img ." ". title title title title title title ." ". info info info info info info ." ". info info info info info info ." ". . . . . . . .";
-    border-radius: 10px;
-    -webkit-box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.3);
-    /* background-color: var(--backgroundWhite); */
-    background-color: cadetblue;
-    flex: 1;
-    justify-self: center;
-    align-self: start;
+    align-items: center;
 `;
 
-export { ProductCardConatiner };
+const TopSection = styled.div `
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+`;
+
+const MidSectionImg= styled.img `
+    width: 100%;
+`;
+
+const StyledLabel = styled.label `
+    font-size: ${props => props.size};
+    color: ${props => props.theme.mainFontColor};
+    margin-left: ${props => props.margin};
+`;
+
+const BottomSection = styled.div `
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+`;
+
+const StyledIcon = styled(FontAwesomeIcon) `
+    color: ${props => props.theme.isLight ? props.theme.mainAccentColor : props.theme.mainFontColor};
+    cursor: pointer;
+
+    :hover {
+        color: ${props => props.theme.secondFondColor};
+    }
+
+    @media (max-width: 768px) {
+        :hover, :focus {
+            color: ${props => props.theme.isLight ? props.theme.mainAccentColor : props.theme.mainFontColor};
+        }
+    }
+`;
+
+const ShoppingCarButton = styled.div `
+    width: 42px;
+    height: 42px;
+    left: 1270px;
+    top: 20px;
+
+    border: 1px solid ${props => props.theme.isLight ? props.theme.mainAccentColor : props.theme.mainFontColor};
+    box-sizing: border-box;
+    border-radius: 21px;
+    
+    margin: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        width: 30%;
+    }
+`;
+
+export { ProductCardConatiner,
+	TopSection,
+	MidSectionImg,
+	BottomSection,
+	StyledLabel,
+	ShoppingCarButton,
+	StyledIcon
+};

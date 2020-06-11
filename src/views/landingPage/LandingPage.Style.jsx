@@ -5,6 +5,7 @@ const Grid= styled.div`
         display: grid;
         grid-gap: 20px;
         width: 90%;
+        height:100%;
         margin: 0 auto;
         grid-template-areas: 
         "LinkPromo . ."

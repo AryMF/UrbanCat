@@ -3,29 +3,34 @@ import React ,{useState, useEffect} from 'react';
 
 import * as Styles from './LandingPage.Style';
 
-
+const PromotionURL = `https://genericapiv1.azurewebsites.net/v1/shop/promotions`
 
 const LandingPage = () => {
 
-    // const[promo,setPromo]=useState([]);
-    // const[category,setCategory]=useState([]);
+    const[promo,setPromo]=useState([]);
+    const[category,setCategory]=useState([]);
 
-    // useEffect(() =>{
-            // const promotions = async ()=>{
-            //     const dataPromo = await ..........
-            //     random 2
-            //     setPromo(dataPromo)
-            // }
-           //promotions();
+    const getPromotions = async () =>{
+        const response = await fetch(PromotionURL);
+        const data = await response.json();
+        const dataRandom = (data[Math.floor(Math.random()*data.length)]);
+        setPromo(dataRandom);
+        console.log(dataRandom)
+        return dataRandom;  
+    };
 
-                // const categorys = async ()=>{
-            //     const dataCategory = await .....
-        
-            //     setCategory(dataCategory)
-            // }
-           //promotions();
+    // const getCategorys = async () =>{
+    //     const response = await fetch(PromotionURL);
+    //     const data = await response.json();
+    //     const dataRandom = (data[Math.floor(Math.random()*data.length)]);
+    //     setCategory(dataRandom);
+    //     return dataRandom;  
+    // };
 
-    // })
+
+    useEffect(() =>{
+            getPromotions();
+    },[])
 
     return (
 
@@ -38,7 +43,7 @@ const LandingPage = () => {
                 
                     <Styles.PromotionLarge>
                         <li>
-                        {/* <img src={}></img> */}
+                        
                         </li>
                     </Styles.PromotionLarge>
                 
@@ -47,7 +52,7 @@ const LandingPage = () => {
                         {/* <img src={}></img> */}
                         </li>
                     </Styles.PromotionSmall>
-                    
+
                     <Styles.CategoryOne>
                         <li>
                         {/* <img src={}></img> */}

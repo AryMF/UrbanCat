@@ -50,7 +50,7 @@ function App() {
 						<View.ProductsPage />
 					</Route>
 					<Route path="/products/:id">
-						<ProductDetail />
+						<View.ProductDetail />
 					</Route>
 					<Route path="/manage-products">
 						<ManageProducts />

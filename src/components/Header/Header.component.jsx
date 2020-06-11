@@ -8,7 +8,7 @@ import { faShoppingBag, faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 // import SymbolLogo from '../../assets/logo_Cat.svg';
 
 function Header({darkTheme, themeChangerHanddler}) {
-	const [currentUser, setCurrentUser] = useState(false); //Temporal
+	const [currentUser, setCurrentUser] = useState(true); //Temporal
 	
 	return(
 		<Style.HeaderContainer>

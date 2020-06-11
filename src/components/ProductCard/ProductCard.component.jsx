@@ -1,7 +1,8 @@
 import React from 'react';
 
 import * as Style from './ProductCard.styles';
-import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+// import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import { ShoppingCarButton } from '../ShoppingCarButton';
 
 import MockImage from '../../assets/mockImage.jpg';
 
@@ -40,9 +41,7 @@ function ProductCard() {
 					<Style.StyledLabel size={'18px'} > {priceFormated} </Style.StyledLabel>
 				</div>
 				<div style={{flex: '1', display: 'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
-					<Style.ShoppingCarButton>
-						<Style.StyledIcon icon={faShoppingBag} size="lg"/>
-					</Style.ShoppingCarButton>
+					<ShoppingCarButton />
 				</div>
 			</Style.BottomSection>
 		</Style.ProductCardConatiner>

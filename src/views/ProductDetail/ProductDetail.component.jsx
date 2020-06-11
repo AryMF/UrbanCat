@@ -42,7 +42,7 @@ function ProductDetail() {
 					<Style.StyledLabel size={'16px'} margin={'10px'} > Size: {sizes} </Style.StyledLabel>
 					<Style.StyledLabel size={'16px'} margin={'10px'} > Size: {priceFormated} </Style.StyledLabel>
 					<Style.StyledLabel size={'16px'} margin={'10px'} > Quantity </Style.StyledLabel>
-                    <ShoppingCarButton />
+					<ShoppingCarButton />
 				</Style.RightPanel>
 			</Style.BottomSection>
 			<div style={{height: '60px'}} />

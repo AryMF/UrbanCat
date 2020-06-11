@@ -9,6 +9,7 @@ import {
 	useParams
 } from "react-router-dom";
 
+import * as View from './views';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 
@@ -46,7 +47,7 @@ function App() {
 						<LandingPage />
 					</Route>
 					<Route exact path="/products">
-						<Products />
+						<View.ProductsPage />
 					</Route>
 					<Route path="/products/:id">
 						<ProductDetail />

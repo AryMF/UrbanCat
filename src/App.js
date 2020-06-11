@@ -1,5 +1,5 @@
 import React from 'react';
-import { LandingPage } from './views/landingPage/index'
+import { LandingPage } from './views/landingPage/index';
 import logo from './logo.svg';
 import './App.css';
 

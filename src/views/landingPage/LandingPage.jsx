@@ -1,50 +1,70 @@
-import { React , useState } from 'react';
+import React ,{useState, useEffect} from 'react';
+//import { Link } from 'react-router-dom';
 
-import styled from 'styled-components';
+import * as Styles from './LandingPage.Style';
+
 
 
 const LandingPage = () => {
 
-    const [promo,setPromo ] =useState([]);
-    const [category,setCategory ] =useState([]);
+    // const[promo,setPromo]=useState([]);
+    // const[category,setCategory]=useState([]);
 
-const Grid= styled.div`
-    display: grid;
-    grid-template-areas: 
-    "main";
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 5rem 1fr 5rem;
-    height: 100%;
-`
+    // useEffect(() =>{
+            // const promotions = async ()=>{
+            //     const dataPromo = await ..........
+            //     random 2
+            //     setPromo(dataPromo)
+            // }
+           //promotions();
 
-    return(
-
-        <Grid className="grid-container">
-            <section className="promotions">
-                    <ul>
-                        <li>
-
-                        </li>
-                    </ul>
-                        <li>
-
-                        </li>
-            </section>
-            <section className="category">
-                    <ul>
-                        <li>
-
-                        </li>
-                        <li>
-
-                        </li>
-                        <li>
-
-                        </li>
-                    </ul>
-            </section>
+                // const categorys = async ()=>{
+            //     const dataCategory = await .....
         
-        </Grid>
+            //     setCategory(dataCategory)
+            // }
+           //promotions();
+
+    // })
+
+    return (
+
+        <Styles.Grid >
+
+            <Styles.LinkPromo>
+                <h1>Hola</h1>
+            </Styles.LinkPromo>
+            
+                
+                    <Styles.PromotionLarge>
+                        <li>
+                        {/* <img src={}></img> */}
+                        </li>
+                    </Styles.PromotionLarge>
+                
+                    <Styles.PromotionSmall>
+                        <li>
+                        {/* <img src={}></img> */}
+                        </li>
+                    </Styles.PromotionSmall>
+                    
+                    <Styles.CategoryOne>
+                        <li>
+                        {/* <img src={}></img> */}
+                        </li>
+                    </Styles.CategoryOne>
+                    <Styles.CategoryTwo>
+                        <li>
+                        {/* <img src={}></img> */}
+                        </li>
+                    </Styles.CategoryTwo>
+                    <Styles.CategoryThree>
+                        <li>
+                        {/* <img src={}></img> */}
+                        </li>
+                    </Styles.CategoryThree>
+        
+        </Styles.Grid>
 
     )
 }

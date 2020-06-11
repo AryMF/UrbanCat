@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **[ URBAN CAT ]**
+---
 
-## Available Scripts
+## Table of Contents
+* [1. Description](#1-description)
+* [2. Technologys](#2-technologys)
+* [3. Planning strategy](#3-planning-strategy)
+* [4. Work flow approach](#4-work-flow-approach)
+* [5. Prototype](#5-prototype)
+* [6. Final product](#6-final-product)
+* [7. Authors](#7-authors)
 
-In the project directory, you can run:
+---
 
-### `yarn start`
+## 1. Description
+## 2. Technologys
+This project is developed with React, react-router, styled-components and tested with Jest.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 3. Planning strategy
+This is a basic analysis of our data flow, views, and components. 
+<img src = "https://raw.githubusercontent.com/AryMF/UrbanCat/ary/src/assets/ComponentAnalysis/Page%2001.png" width = "100%">
+<img src = "https://raw.githubusercontent.com/AryMF/UrbanCat/ary/src/assets/ComponentAnalysis/Page%2002.png" width = "100%">
+<img src = "https://raw.githubusercontent.com/AryMF/UrbanCat/ary/src/assets/ComponentAnalysis/Page%2003.png" width = "100%">
+<img src = "https://raw.githubusercontent.com/AryMF/UrbanCat/ary/src/assets/ComponentAnalysis/Page%2004.png" width = "100%">
+<img src = "https://raw.githubusercontent.com/AryMF/UrbanCat/ary/src/assets/ComponentAnalysis/Page%2005.png" width = "100%">
+<img src = "https://raw.githubusercontent.com/AryMF/UrbanCat/ary/src/assets/ComponentAnalysis/Page%2006.png" width = "100%">
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+## 4. Work flow approach
+ 
+The approach that is going to be given to the development work is to divide the user stories into 4 different sprints that focus on prioritization and fulfillment of the MVPs and at the end of each sprint have a functional product.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Sprints are going to be worked in the next order:
 
-### `yarn build`
+###Sprint One
+User stories 1 to 5 will be worked on in the first sprint, in this sprint we focus on the end user being able to navigate through the landing page, with the exception of integration to social networks, shopping cart and search bar.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+###Sprint Two
+User Stories 9 to 12 focus on creating products, promotions and categories with CRUD as the administrative user.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+###Sprint Three
+User stories 6 to 8 will focus on the shopping cart and social networks prioritizing social networks
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For more details on the user stories check the documentation on the link:
+[User Stories](https://drive.google.com/file/d/1OhRtE1zPGcVCMQy3-nunZmZ3i3_22S0b/view?usp=sharing)
 
-### `yarn eject`
+## 5. Prototype
+<p align="center">
+<img src = "https://raw.githubusercontent.com/AryMF/UrbanCat/master/src/assets/Prototype/LandingPage%20-%20Cellphone.png" width = "50%">
+<img src = "https://raw.githubusercontent.com/AryMF/UrbanCat/master/src/assets/Prototype/Products%20-%20Cellphone.png" width = "50%">
+<img src = "https://raw.githubusercontent.com/AryMF/UrbanCat/master/src/assets/Prototype/Promotions%20-%20Cellphone.png" width = "50%">
+<img src = "https://raw.githubusercontent.com/AryMF/UrbanCat/master/src/assets/Prototype/LandingPage%20-%20Desktop%20light.png" width = "100%">
+<img src = "https://raw.githubusercontent.com/AryMF/UrbanCat/master/src/assets/Prototype/Promotions%20-%20Desktop.png" width = "100%">
+<img src = "https://raw.githubusercontent.com/AryMF/UrbanCat/master/src/assets/Prototype/Products-%20Desktop.png" width = "100%">
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 6. Final product
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 7. Authors
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* **Ariadne Malacara** - [Github](https://github.com/AryMF)
+* **Georgina Peréz** - [Github](https://github.com/georginapq)
+* **Eugenia Najar** - [Github](https://github.com/eugynias)
+* **Laura Barragán** - [Github](https://github.com/lauracbf)
+* **Mónica Martínez** - [Github](https://github.com/MonicaMartz)

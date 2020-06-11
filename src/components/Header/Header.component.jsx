@@ -18,12 +18,12 @@ function Header({darkTheme, themeChangerHanddler}) {
 				{ darkTheme 
 					? <Style.StyledIcon 
 						icon={faMoon}
-						style={{'fontSize': '32px', 'margin': '15px'}}
+						style={{'fontSize': '28px', 'margin': '15px'}}
 						onClick={themeChangerHanddler}
 					/>
 					: <Style.StyledIcon
 						icon={faSun}
-						style={{'fontSize': '32px', 'margin': '15px'}}
+						style={{'fontSize': '28px', 'margin': '15px'}}
 						onClick={themeChangerHanddler}
 					/> 
 				}

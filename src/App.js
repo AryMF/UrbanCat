@@ -62,7 +62,7 @@ function App() {
 						<ManageCategories />
 					</Route>
 					<Route path="/promotions">
-						<Promotions />
+						<View.PromotionPage />
 					</Route>
 					<Route path="/manage-promotions">
 						<ManagePromotions />

@@ -6,7 +6,7 @@ import { ProductCard } from '../../components/ProductCard';
 
 function ProductsPage() {
 	let algo = [];
-	for(let i=0; i < 10; i++){
+	for(let i=0; i < 30; i++){
 		algo.push(
 			<ProductCard mockData={i}/>
 		);
@@ -19,6 +19,7 @@ function ProductsPage() {
 			</Style.TopSection>
 			<Style.BottomSection>
 				{algo}
+				<div style={{'height': '60px', 'width': '100vw'}} ></div>
 			</Style.BottomSection>
 		</Style.ProductPageConatiner>
 	);

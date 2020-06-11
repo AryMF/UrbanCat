@@ -23,12 +23,11 @@ function App() {
 	};
 
 	return (
-		// <ThemeProvider theme={darkTheme ? Light : Dark}>
-		<ThemeProvider theme={Light}>
+		<ThemeProvider theme={darkTheme ? Dark : Light}>
 			<GlobalStyle/>
 			
 			<Router>
-				<Header />
+				<Header darkTheme={darkTheme} themeChangerHanddler={themeChangerHanddler} />
 				<div>
 					<Link to="/" style={{'marginRight': '2em'}} >Landing Page</Link>
 					<Link to="/products" style={{'marginRight': '2em'}} >Products</Link>

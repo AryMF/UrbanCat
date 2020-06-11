@@ -2,19 +2,31 @@ import React, { useState } from 'react';
 
 import * as Style from './Header.styles';
 import { UserMenu } from './Login';
-import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBag, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 // import HorizontalLogo from '../../assets/logo_horizontal.svg';
 // import SymbolLogo from '../../assets/logo_Cat.svg';
 
-function Header() {
-	const [currentUser, setCurrentUser] = useState(true); //Temporal
+function Header({darkTheme, themeChangerHanddler}) {
+	const [currentUser, setCurrentUser] = useState(false); //Temporal
 	
 	return(
 		<Style.HeaderContainer>
 			<Style.HorizontalLogo />
 			<Style.SymbolLogo />
 			<Style.StyledDiv>
+				{ darkTheme 
+					? <Style.StyledIcon 
+						icon={faMoon}
+						style={{'fontSize': '32px', 'margin': '15px'}}
+						onClick={themeChangerHanddler}
+					/>
+					: <Style.StyledIcon
+						icon={faSun}
+						style={{'fontSize': '32px', 'margin': '15px'}}
+						onClick={themeChangerHanddler}
+					/> 
+				}
 				{ currentUser 
 					? <Style.StyledLabel> Welcome<br/>[ Administrator ]</Style.StyledLabel> 
 					: <UserMenu /> 

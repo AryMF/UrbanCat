@@ -8,7 +8,7 @@ const Light = {
 };
 
 const Dark = {
-	isLight: true,
+	isLight: false,
 	background: '#214255',
 	mainFontColor: '#FFFFFF',
 	secondFondColor: '#000000',

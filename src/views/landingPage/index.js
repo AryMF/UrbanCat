@@ -1,4 +1,4 @@
-import LandingPage from './LandingPage';
+import LandingPageView from './LandingPageView';
 
 
-export { LandingPage };
+export { LandingPageView };

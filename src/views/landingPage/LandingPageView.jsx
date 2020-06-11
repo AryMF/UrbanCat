@@ -2,10 +2,13 @@ import React ,{useState, useEffect} from 'react';
 //import { Link } from 'react-router-dom';
 
 import * as Styles from './LandingPage.Style';
+import { Link } from 'react-router-dom';
 
 const PromotionURL = `https://genericapiv1.azurewebsites.net/v1/shop/promotions`
 
-const LandingPage = () => {
+const CategoriesURL = `https://genericapiv1.azurewebsites.net/v1/shop/categories`
+
+const LandingPageView = () => {
 
     const[promo,setPromo]=useState([]);
     const[category,setCategory]=useState([]);
@@ -13,18 +16,17 @@ const LandingPage = () => {
     const getPromotions = async () =>{
         const response = await fetch(PromotionURL);
         const data = await response.json();
-        //const dataRandom = (data[Math.floor(Math.random()*data.length)]);
         const promRandom = getRandomPromoElements(data,2);
         setPromo(promRandom);
         return promRandom;  
     };
 
     const getCategorys = async () =>{
-        const response = await fetch(PromotionURL);
+        const response = await fetch(CategoriesURL);
         const data = await response.json();
-        //const dataRandom = (data[Math.floor(Math.random()*data.length)]);
         const categoRandom = getRandomCategoElements(data,3);
         setCategory(categoRandom);
+        console.log(categoRandom)
         return categoRandom;  
     };
 
@@ -50,16 +52,6 @@ const LandingPage = () => {
         return shuffled.slice(min);
     }
     
-
-    // const getCategorys = async () =>{
-    //     const response = await fetch(PromotionURL);
-    //     const data = await response.json();
-    //     const dataRandom = (data[Math.floor(Math.random()*data.length)]);
-    //     setCategory(dataRandom);
-    //     return dataRandom;  
-    // };
-
-
     useEffect(() =>{
             getPromotions();
             getCategorys();
@@ -70,7 +62,7 @@ const LandingPage = () => {
         <Styles.Grid >
 
             <Styles.LinkPromo>
-                <h1>Hola</h1>
+                <Link>Promotions</Link>
             </Styles.LinkPromo>
             
                 
@@ -80,25 +72,28 @@ const LandingPage = () => {
                     </Styles.PromotionLarge>
                 
                     <Styles.PromotionSmall>
-                        <li>
+                        <div>
                         {/* <img src={}></img> */}
-                        </li>
+                        </div>
                     </Styles.PromotionSmall>
+                    <Styles.LinkProdu>
+                    <Link>Productos</Link>
+                    </Styles.LinkProdu>
 
                     <Styles.CategoryOne>
-                        <li>
+                        <div>
                         {/* <img src={}></img> */}
-                        </li>
+                        </div>
                     </Styles.CategoryOne>
                     <Styles.CategoryTwo>
-                        <li>
+                        <div>
                         {/* <img src={}></img> */}
-                        </li>
+                        </div>
                     </Styles.CategoryTwo>
                     <Styles.CategoryThree>
-                        <li>
+                        <div>
                         {/* <img src={}></img> */}
-                        </li>
+                        </div>
                     </Styles.CategoryThree>
         
         </Styles.Grid>
@@ -106,4 +101,4 @@ const LandingPage = () => {
     )
 }
 
-export default LandingPage;
+export default LandingPageView;

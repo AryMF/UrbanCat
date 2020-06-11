@@ -2,18 +2,19 @@ import styled from 'styled-components';
 
 
 const Grid= styled.div`
+        border: black;
         display: grid;
         grid-gap: 20px;
-        width: 90%;
-        height:100%;
+        width: 95%;
         margin: 0 auto;
         grid-template-areas: 
         "LinkPromo . ."
         "promotionLarge promotionLarge promotionLarge"
         "promotionSmall promotionSmall promotionSmall"
+                                      ". . LinkProdu "
         "categoryOne    categoryTwo    categoryThree ";
         grid-template-columns: repeat(3 , 1fr);
-        grid-template-rows: repeat(5, 1fr);  
+        grid-template-rows:  repeat(5, 1fr);  
 
         
         @media screen and (max-width: 700px) {
@@ -21,14 +22,19 @@ const Grid= styled.div`
                 "LinkPromo"
                 "promotionLarge"
                 "promotionSmall"
+                "LinkProdu"
                 "categoryOne"
                 "categoryTwo"   
-                "categoryThree";      
+                "categoryThree";   
         }
 `;
 const LinkPromo= styled.div`
         grid-area: "LinkPromo" ;
-
+`;
+const LinkProdu= styled.div`
+        grid-area: "LinkProdu";
+        /* grid-column: 3 / 4 ;
+        grid-row: 4 / 5; */
 `;
 // const Promotions= styled.div`
 //         display: flex;
@@ -75,4 +81,4 @@ const CategoryThree= styled.div`
 
 
 
-export {Grid ,  CategoryOne,CategoryTwo ,CategoryThree , PromotionLarge,PromotionSmall , LinkPromo };
+export {Grid ,  CategoryOne,CategoryTwo ,CategoryThree , PromotionLarge,PromotionSmall , LinkPromo ,LinkProdu};

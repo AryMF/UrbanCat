@@ -33,8 +33,8 @@ const LinkPromo= styled.div`
 `;
 const LinkProdu= styled.div`
         grid-area: "LinkProdu";
-        /* grid-column: 3 / 4 ;
-        grid-row: 4 / 5; */
+        grid-column: 3 / 4 ;
+        grid-row: 4 / 5;
 `;
 // const Promotions= styled.div`
 //         display: flex;
@@ -54,17 +54,6 @@ const PromotionSmall= styled.ul`
         border: 3px solid yellow;
         grid-area: promotionSmall;
 `;
-
-// const Categorys= styled.div`
-//         background-color: black;
-//         display: grid;
-//         grid-template-columns: 1fr 1fr 1fr;
-//         grid-area: "category"; 
-//         grid-column: 1 / 4;
-//         grid-row: 5 / 6;
-//         grid-gap: 10px;
-// `;
-
 const CategoryOne= styled.div`
         background-color: red;
         grid-area: categoryOne;

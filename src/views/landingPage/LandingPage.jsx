@@ -13,11 +13,43 @@ const LandingPage = () => {
     const getPromotions = async () =>{
         const response = await fetch(PromotionURL);
         const data = await response.json();
-        const dataRandom = (data[Math.floor(Math.random()*data.length)]);
-        setPromo(dataRandom);
-        console.log(dataRandom)
-        return dataRandom;  
+        //const dataRandom = (data[Math.floor(Math.random()*data.length)]);
+        const promRandom = getRandomPromoElements(data,2);
+        setPromo(promRandom);
+        return promRandom;  
     };
+
+    const getCategorys = async () =>{
+        const response = await fetch(PromotionURL);
+        const data = await response.json();
+        //const dataRandom = (data[Math.floor(Math.random()*data.length)]);
+        const categoRandom = getRandomCategoElements(data,3);
+        setCategory(categoRandom);
+        return categoRandom;  
+    };
+
+    function getRandomPromoElements(data,count ) {
+        var shuffled = data.slice(0), i = data.length, min = i - count, temp, index;
+        while (i-- > min) {
+            index = Math.floor((i + 1) * Math.random());
+            temp = shuffled[index];
+            shuffled[index] = shuffled[i];
+            shuffled[i] = temp;
+        }
+        return shuffled.slice(min);
+    }
+    
+    function getRandomCategoElements(data,count ) {
+        var shuffled = data.slice(0), i = data.length, min = i - count, temp, index;
+        while (i-- > min) {
+            index = Math.floor((i + 1) * Math.random());
+            temp = shuffled[index];
+            shuffled[index] = shuffled[i];
+            shuffled[i] = temp;
+        }
+        return shuffled.slice(min);
+    }
+    
 
     // const getCategorys = async () =>{
     //     const response = await fetch(PromotionURL);
@@ -30,6 +62,7 @@ const LandingPage = () => {
 
     useEffect(() =>{
             getPromotions();
+            getCategorys();
     },[])
 
     return (
@@ -42,9 +75,8 @@ const LandingPage = () => {
             
                 
                     <Styles.PromotionLarge>
-                        <li>
                         
-                        </li>
+                
                     </Styles.PromotionLarge>
                 
                     <Styles.PromotionSmall>

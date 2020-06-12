@@ -1,2 +1,2 @@
-import CategoryPage from './CategoryPage.View';
+import CategoryPage from './CategoryPage.component';
 export { CategoryPage };

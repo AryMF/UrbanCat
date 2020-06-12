@@ -1,2 +1,2 @@
-import PromotionPage from './PromotionPage.View';
+import PromotionPage from './PromotionPage.component';
 export { PromotionPage };

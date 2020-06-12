@@ -65,7 +65,7 @@ const LandingPageView = () => {
                 <Link>Promotions</Link>
             </Styles.LinkPromo>
                     <Styles.PromotionLarge>
-                        
+                        <Styles.Img src="https://source.unsplash.com/random/1600x900/?bags"></Styles.Img>
                     </Styles.PromotionLarge>
                 
                     <Styles.PromotionSmall>

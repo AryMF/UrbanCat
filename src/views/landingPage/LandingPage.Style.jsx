@@ -11,7 +11,7 @@ const Grid= styled.div`
         grid-area: "promotionLarge";
         @media  (max-width: 768px) {
             grid-template-columns:minmax(150px,1fr);
-            grid-auto-rows: minmax(125px, auto); 
+            grid-auto-rows: minmax(50px, auto); 
          }
 
 `;
@@ -22,11 +22,19 @@ const LinkPromo= styled.div`
 `;
 
 const PromotionLarge= styled.ul`
-        border: 3px solid black;
         min-height: 50px;
         grid-column: span 3;
-        @media (max-width: 768px) {
-        }
+      &::before {
+        content: "THE BEST PROMOTION";
+        position: relative;
+        background-color: rgba(0,0,0,0.5);
+        padding: 1rem; 
+        top: 50px;
+        color: white;
+        font-family: 'Lato', sans-serif;
+        font-size: medium;
+      }
+
 `;
 
 const PromotionSmall= styled.ul`
@@ -37,14 +45,14 @@ const PromotionSmall= styled.ul`
 
 const LinkProdu= styled.div`
         background: gray;
-        align-self:end;
+        grid-column: span 3;
         @media (max-width: 768px) {
+          align-self: flex-end;
         }
 `;
 
 const Categories = styled.div`
         color:white;
-        /*grid-row: 5/5;*/
         grid-column: 1/4;
         display: flex;
         flex-wrap: wrap;
@@ -55,7 +63,12 @@ const Category = styled.figure`
         background-color:pink;
         min-width: 200px;
         min-height: 200px;
+        margin: 0.5rem;
+        overflow: hidden:
+`
+const Img = styled.img`
+        width: 100%;
+        border-radius: 20px;
 `
 
-
-export {Grid , Categories, Category , PromotionLarge,PromotionSmall , LinkPromo ,LinkProdu};
+export {Grid ,Img, Categories, Category , PromotionLarge,PromotionSmall , LinkPromo ,LinkProdu};

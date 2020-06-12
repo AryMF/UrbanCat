@@ -45,7 +45,7 @@ function App() {
 
 				<Switch>
 					<Route exact path="/">
-						<LandingPageView />
+						<View.LandingPageView />
 					</Route>
 					<Route exact path="/products">
 						<View.ProductsPage />

@@ -34,8 +34,7 @@ const PromotionLarge= styled.ul`
         position:absolute;
         bottom: 5px;
         width: 25%;
-      }
-
+}
 `;
 
 const PromotionSmall= styled.ul`

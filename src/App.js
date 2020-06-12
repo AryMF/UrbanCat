@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import {
@@ -57,7 +56,7 @@ function App() {
 						<ManageProducts />
 					</Route>
 					<Route path="/categories">
-						<Categories />
+						<View.CategoryPage />
 					</Route>
 					<Route path="/manage-categories">
 						<ManageCategories />
@@ -156,7 +155,6 @@ function Statistics() {
 			<h2>Statistics</h2>
 		</div>
 	);
-
 }
 
 export default App;

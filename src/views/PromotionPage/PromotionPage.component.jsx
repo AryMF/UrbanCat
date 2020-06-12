@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import * as Styles from './PromotionPage.Style.jsx';
+import * as Styles from './PromotionPage.styles.jsx';
 
 const PromotionURL = 'https://genericapiv1.azurewebsites.net/v1/shop/promotions';
 
@@ -11,7 +11,6 @@ function PromotionPage(){
 		const data = await response.json();
 		console.log(data);
 		setPromotionList(data);
-		console.log(setPromotionList);
 		return data;  
 	};
 

@@ -9,8 +9,6 @@ import {
 	useParams
 } from "react-router-dom";
 
-import getProductsData from './contexts/fetchInfo.js';
-
 import * as View from './views';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -19,10 +17,6 @@ import { LandingPageView } from './views/landingPage/index';
 import { Light, Dark, GlobalStyle } from './styles/index';
 
 function App() {
-
-  //Testing Data
-  getProductsData();
-
 	const [darkTheme, setDarkTheme] = useState(localStorage.getItem('theme') === 'true' || false);
 
 	const themeChangerHanddler = () => {
@@ -33,13 +27,13 @@ function App() {
 	return (
 		<ThemeProvider theme={darkTheme ? Dark : Light}>
 			<GlobalStyle/>
-			
+
 			<Router>
 				<Header darkTheme={darkTheme} themeChangerHanddler={themeChangerHanddler} />
-				<div>
+				{/* <div>
 					<Link to="/" style={{'marginRight': '2em'}} >Landing Page</Link>
 					<Link to="/products" style={{'marginRight': '2em'}} >Products</Link>
-					<Link to={'/products/' + 1} style={{'marginRight': '2em'}} >Product Detail</Link>
+					<Link to={'/product/' + 1} style={{'marginRight': '2em'}} >Product Detail</Link>
 					<Link to="/manage-products" style={{'marginRight': '2em'}} >Manage Products</Link>
 					<Link to="/categories" style={{'marginRight': '2em'}} >Categories</Link>
 					<Link to="/manage-categories" style={{'marginRight': '2em'}} >Manage Categories</Link>
@@ -47,16 +41,16 @@ function App() {
 					<Link to="/Manage-promotions" style={{'marginRight': '2em'}} >Manage Promotions</Link>
 					<Link to="/statistics" style={{'marginRight': '2em'}} >Statistics</Link>
 				</div>
-				<hr />
+				<hr /> */}
 
 				<Switch>
 					<Route exact path="/">
-						<LandingPageView />
+						<View.LandingPageView />
 					</Route>
-					<Route exact path="/products">
+					<Route exact path="/products/:id">
 						<View.ProductsPage />
 					</Route>
-					<Route path="/products/:id">
+					<Route path="/product/:id">
 						<View.ProductDetail />
 					</Route>
 					<Route path="/manage-products">
@@ -76,7 +70,7 @@ function App() {
 					</Route>
 					<Route path="/statistics">
 						<Statistics />
-					</Route>					
+					</Route>
 					<Redirect to="/" />
 				</Switch>
 				<Footer />
@@ -84,35 +78,6 @@ function App() {
 
 
 		</ThemeProvider>
-	);
-}
-
-// You can think of these components as "pages"
-// in your app.
-
-function LandingPage() {
-	return (
-		<div>
-			<h2>Landing Page</h2>
-		</div>
-	);
-}
-
-function Products() {
-	return (
-		<div>
-			<h2>Products</h2>
-		</div>
-	);
-}
-
-function ProductDetail() {
-	let { id } = useParams();
-	return (
-		<div>
-			<h2>Product Detail</h2>
-			<h3> {id} </h3>
-		</div>
 	);
 }
 
@@ -124,26 +89,10 @@ function ManageProducts() {
 	);
 }
 
-function Categories() {
-	return (
-		<div>
-			<h2>Categories</h2>
-		</div>
-	);
-}
-
 function ManageCategories() {
 	return (
 		<div>
 			<h2>Manage Categories</h2>
-		</div>
-	);
-}
-
-function Promotions() {
-	return (
-		<div>
-			<h2>Promotions</h2>
 		</div>
 	);
 }

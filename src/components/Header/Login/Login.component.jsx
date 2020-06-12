@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 // import { AuthContext, closeSession } from '../../controller/Auth';
 
-import { 
+import {
 	ImageStyle,
 	LogoutButton,
 	Dropdown,
@@ -16,7 +16,7 @@ import { faUserCircle} from '@fortawesome/free-solid-svg-icons';
 // import ButtonImage from '../ButtonImage/ButtonImage';
 // import avatarSVG from '../../assets/images/avatar.png';
 
-function UserMenu() {
+function UserMenu({loginHandle}) {
 	// const { currentUser } = useContext(AuthContext);
 	// const avatarImage = currentUser.photoURL || avatarSVG;
 	const [display, setDisplay] = useState(false);
@@ -37,14 +37,14 @@ function UserMenu() {
 			onMouseEnter={onMouseEnterHandler}
 			onMouseLeave={onMouseLeaveHandler}
 		>
-			<StyledIcon 
+			<StyledIcon
 				style={{'fontSize': '42px', 'margin': '15px'}}
 				icon={faUserCircle}
 				size="lg"
 			/>
 			<Dropdown display={display ? 'flex' : 'none'}>
 				<TransparentDiv />
-				<DropdownContent>
+				<DropdownContent onSubmit={loginHandle}>
 					<br />
 					<StyledLabel> USERNAME: </StyledLabel>
 					<StyledInput type="text" name="name" />

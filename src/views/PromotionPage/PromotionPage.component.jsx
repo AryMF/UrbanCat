@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import * as Styles from './PromotionPage.styles.jsx';
 
-const PromotionURL = 'https://genericapiv1.azurewebsites.net/v1/shop/promotions';
+import { getPromotionsData }  from '../../controller/fetchInfo';
 
 function PromotionPage(){
 	const [promotionList, setPromotionList] = useState([]);
 
 	const getPromotion = async () => {
-		const response = await fetch(PromotionURL);
-		const data = await response.json();
-		console.log(data);
+		const data = await getPromotionsData();
 		setPromotionList(data);
-		return data;  
 	};
 
 	useEffect(() => {
 		getPromotion();
 	}, []);
-
 
 	return(
 		<Styles.Container>
@@ -26,10 +22,13 @@ function PromotionPage(){
 				<span>Buscador Prueba</span>
 			</Styles.Nav>
 			<Styles.PromotionList>
-				{promotionList.map(promo =>( 
-					<Styles.PromotionItem key={promo.promotionID}>              
-						{promo.description}
-					</Styles.PromotionItem>))}          
+				{
+					promotionList.map(promo => (
+						<Styles.PromotionItem key={promo.promotionID}>
+							{promo.description}
+						</Styles.PromotionItem>
+					))
+				}
 			</Styles.PromotionList>
 			<div style={{'height': '60px', 'width': '100vw'}} ></div>
 		</Styles.Container>

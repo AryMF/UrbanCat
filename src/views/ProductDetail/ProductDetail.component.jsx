@@ -1,14 +1,15 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, useHistory } from 'react-router-dom';
+
+import { getProductByIdData } from '../../controller/fetchInfo';
 
 import * as Style from './ProductDetail.styles';
-import { ShoppingCarButton } from '../../components/ShoppingCarButton';
 
+import { ShoppingCarButton } from '../../components/ShoppingCarButton';
 import { SizeButton } from './SizeButton';
 import { ColorButton } from './ColorButton';
 
 import MockImage from '../../assets/mockImage.jpg';
-import { useState } from 'react';
 
 const mockData = {
 	productId: 1,
@@ -23,12 +24,27 @@ const mockData = {
 };
 
 function ProductDetail() {
+	const { id } = useParams();
+	const history = useHistory();
 	const { description, colors, sizes, price } = mockData;
 	const priceFormated = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price);
-	let { id } = useParams();
+	const [productInfo, setProductInfo] = useState('');
 	const [selectedSize, setSelectedSize] = useState('');
 	const [selectedColor, setSelectedColor] = useState('');
 	const [selectedQuantity, setSelectedQuantity] = useState(0);
+
+	const backToProducts = () => {
+		history.goBack();
+	};
+
+	const getProductData = async () => {
+		const data = await getProductByIdData(id);
+		setProductInfo(data);
+	};
+
+	useEffect(() => {
+		getProductData();
+	}, []);
 
 	const shoppingButtonHandler = () => {
 		const productData = {
@@ -46,44 +62,44 @@ function ProductDetail() {
 
 		console.log(productData);
 	};
-    
+
 	return(
 		<Style.ProductPageConatiner>
 			<Style.TopSection>
-				<label> Link </label>
+				<label style={{cursor: 'pointer'}} onClick={backToProducts} > {'<< BACK TO PRODUCT LIST'} </label>
 			</Style.TopSection>
 			<Style.BottomSection>
-				<Style.LeftPanel> 
+				<Style.LeftPanel>
 					<Style.StyledImg src={MockImage} />
 					<div style={{height: '60px', width: '100%', textAlign: 'center'}}> Social media bar </div>
 				</Style.LeftPanel>
-				<Style.RightPanel> 
+				<Style.RightPanel>
 					<Style.StyledLabel size={'20px'} margin={'10px'} > Product name {id} </Style.StyledLabel>
-					<Style.StyledLabel size={'16px'} margin={'10px'} > {description} </Style.StyledLabel>
-					<Style.StyledLabel size={'16px'} margin={'10px'} > Price: {priceFormated} </Style.StyledLabel>
+					<Style.StyledLabel size={'16px'} margin={'10px'} > {productInfo.description} </Style.StyledLabel>
+					<Style.StyledLabel size={'16px'} margin={'10px'} > Price: {productInfo.priceFormated} </Style.StyledLabel>
 					<br/>
 					<div style={{display: 'Flex', flexDirection: 'column'}} >
 						<Style.StyledLabel size={'16px'} margin={'10px'} >
-							{ colors 
-								? <ColorButton 
-									colors={colors}
+							{ productInfo.colors
+								? <ColorButton
+									colors={productInfo.colors}
 									selectedColor={selectedColor}
 									setSelectedColor={setSelectedColor}
-								/> 
+								/>
 								: null
 							}
 							<br/>
-							{ sizes 
-								? <SizeButton 
-									sizes={sizes}
+							{ productInfo.sizes
+								? <SizeButton
+									sizes={productInfo.sizes}
 									selectedSize={selectedSize}
 									setSelectedSize={setSelectedSize}
-								/> 
+								/>
 								: null
 							}
 							<br/>
 						</Style.StyledLabel>
-						<Style.StyledLabel size={'16px'} margin={'10px'} > Quantity </Style.StyledLabel>						
+						<Style.StyledLabel size={'16px'} margin={'10px'} > Quantity </Style.StyledLabel>
 					</div>
 					<br/>
 					<ShoppingCarButton />

@@ -5,9 +5,9 @@ const token = 'ySA3aE6EqwUQOZEfh8T9WRkOO6jdaM_P2p0kA8pYAB0X2r83pyRd1oEEX-eSraqy3
 
 //Calls with token
 const createHeaderToken = (type) => {
-    const myHeaders = new Headers();
-    myHeaders.append('authtoken', token);
-	
+	const myHeaders = new Headers();
+	myHeaders.append('authtoken', token);
+
 	return {
 		method: type,
 		headers: myHeaders,
@@ -15,6 +15,6 @@ const createHeaderToken = (type) => {
 };
 
 const apiCallwithTokenFunction = (url = '', http_method = 'GET') => {
-    const requestMethod = createHeaderToken(http_method);
-    return fetch(url, requestMethod);
+	const requestMethod = createHeaderToken(http_method);
+	return fetch(url, requestMethod);
 };

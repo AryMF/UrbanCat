@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 
 import * as Style from './ProductCard.styles';
 // import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
@@ -19,16 +20,17 @@ const mockData = {
 };
 
 
-function ProductCard() {
-	const { description, price } = mockData;
+function ProductCard({ data }) {
+	const history = useHistory();
+	const { description, price, productId } = data;
 	const priceFormated = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price);
 
 	const imageOnClickHandler = () => {
-		alert(`Product detail\n ${description}`);
+		history.push('/product/' + productId);
 	};
 
 	return(
-		<Style.ProductCardConatiner> 
+		<Style.ProductCardConatiner>
 			<Style.TopSection>
 				<Style.StyledLabel size={'16px'} margin={'10px'} > EDIT </Style.StyledLabel>
 				<Style.StyledLabel size={'16px'} margin={'10px'} > DELETE </Style.StyledLabel>

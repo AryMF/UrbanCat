@@ -1,9 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import getProductsData from './contexts/fetchInfo.js';
 
 function App() {
+  getProductsData();
   return (
     <div className="App">
       <header className="App-header">

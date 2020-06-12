@@ -2,72 +2,60 @@ import styled from 'styled-components';
 
 
 const Grid= styled.div`
-        border: black;
         display: grid;
         grid-gap: 20px;
         width: 95%;
         margin: 0 auto;
-        grid-template-areas: 
-        "LinkPromo . ."
-        "promotionLarge promotionLarge promotionLarge"
-        "promotionSmall promotionSmall promotionSmall"
-                                      ". . LinkProdu "
-        "categoryOne    categoryTwo    categoryThree ";
-        grid-template-columns: repeat(3 , 1fr);
-        grid-template-rows:  repeat(5, 1fr);  
+        grid-template-columns: repeat(3, minmax(150px, auto));
+        grid-template-rows: repeat(auto-fill, 1fr);
+        grid-area: "promotionLarge";
+        @media  (max-width: 768px) {
+            grid-template-columns:minmax(150px,1fr);
+            grid-auto-rows: minmax(125px, auto); 
+         }
 
-        
-        @media screen and (max-width: 700px) {
-                grid-template-areas:
-                "LinkPromo"
-                "promotionLarge"
-                "promotionSmall"
-                "LinkProdu"
-                "categoryOne"
-                "categoryTwo"   
-                "categoryThree";   
-        }
 `;
 const LinkPromo= styled.div`
         grid-area: "LinkPromo" ;
+        background-color:red;
+        grid-column: span 3;
 `;
-const LinkProdu= styled.div`
-        grid-area: "LinkProdu";
-        grid-column: 3 / 4 ;
-        grid-row: 4 / 5;
-`;
-// const Promotions= styled.div`
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: space-between;
-//         grid-area: "promotions";
-//         grid-column: 1 / 4;
-//         grid-row: 2 / 4;
-// `;
 
 const PromotionLarge= styled.ul`
-        border: 3px solid yellow;
-        grid-area: promotionLarge;
+        border: 3px solid black;
+        min-height: 50px;
+        grid-column: span 3;
+        @media (max-width: 768px) {
+        }
 `;
 
 const PromotionSmall= styled.ul`
+        min-height: 50px;
         border: 3px solid yellow;
-        grid-area: promotionSmall;
-`;
-const CategoryOne= styled.div`
-        background-color: red;
-        grid-area: categoryOne;
+        grid-column: 1/4;
 `;
 
-const CategoryTwo= styled.div`
-        background-color: red;
-        grid-area: categoryTwo;
-`;
-const CategoryThree= styled.div`
-        background-color: red;
-        grid-area: categoryThree;
+const LinkProdu= styled.div`
+        background: gray;
+        align-self:end;
+        @media (max-width: 768px) {
+        }
 `;
 
+const Categories = styled.div`
+        color:white;
+        /*grid-row: 5/5;*/
+        grid-column: 1/4;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-around;
+`;
+
+const Category = styled.figure`
+        background-color:pink;
+        min-width: 200px;
+        min-height: 200px;
+`
 
 
-export {Grid ,  CategoryOne,CategoryTwo ,CategoryThree , PromotionLarge,PromotionSmall , LinkPromo ,LinkProdu};
+export {Grid , Categories, Category , PromotionLarge,PromotionSmall , LinkPromo ,LinkProdu};

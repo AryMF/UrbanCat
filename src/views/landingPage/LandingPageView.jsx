@@ -64,11 +64,8 @@ const LandingPageView = () => {
             <Styles.LinkPromo>
                 <Link>Promotions</Link>
             </Styles.LinkPromo>
-            
-                
                     <Styles.PromotionLarge>
                         
-                
                     </Styles.PromotionLarge>
                 
                     <Styles.PromotionSmall>
@@ -79,22 +76,18 @@ const LandingPageView = () => {
                     <Styles.LinkProdu>
                     <Link>Productos</Link>
                     </Styles.LinkProdu>
-
-                    <Styles.CategoryOne>
-                        <div>
-                        {/* <img src={}></img> */}
-                        </div>
-                    </Styles.CategoryOne>
-                    <Styles.CategoryTwo>
-                        <div>
-                        {/* <img src={}></img> */}
-                        </div>
-                    </Styles.CategoryTwo>
-                    <Styles.CategoryThree>
-                        <div>
-                        {/* <img src={}></img> */}
-                        </div>
-                    </Styles.CategoryThree>
+                    <Styles.Categories>
+                        <Styles.Category>
+                            <h1>Category</h1>
+                        </Styles.Category>
+                        <Styles.Category>
+                            <h1>Category</h1>
+                        </Styles.Category>
+                        <Styles.Category>
+                            <h1>Category</h1>
+                        </Styles.Category>
+                    </Styles.Categories>
+                    
         
         </Styles.Grid>
 

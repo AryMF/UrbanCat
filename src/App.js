@@ -9,6 +9,8 @@ import {
 	useParams
 } from "react-router-dom";
 
+import getProductsData from './contexts/fetchInfo.js';
+
 import * as View from './views';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -17,6 +19,10 @@ import { LandingPageView } from './views/landingPage/index';
 import { Light, Dark, GlobalStyle } from './styles/index';
 
 function App() {
+
+  //Testing Data
+  getProductsData();
+
 	const [darkTheme, setDarkTheme] = useState(localStorage.getItem('theme') === 'true' || false);
 
 	const themeChangerHanddler = () => {
@@ -156,6 +162,7 @@ function Statistics() {
 			<h2>Statistics</h2>
 		</div>
 	);
+
 }
 
 export default App;

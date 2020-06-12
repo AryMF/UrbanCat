@@ -12,6 +12,7 @@ import {
 import * as View from './views';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { LandingPageView } from './views/landingPage/index';
 
 import { Light, Dark, GlobalStyle } from './styles/index';
 
@@ -44,7 +45,7 @@ function App() {
 
 				<Switch>
 					<Route exact path="/">
-						<LandingPage />
+						<LandingPageView />
 					</Route>
 					<Route exact path="/products">
 						<View.ProductsPage />

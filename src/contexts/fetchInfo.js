@@ -79,7 +79,7 @@ const getProductsData = () => {
         apiCallFunction(URI + products, 'GET')
         .then(response => response.json())
         .then(result =>{
-            console.log(result)
+            // console.log(result)
             const products = {
                'productId': result.productId,
                'description': result.description,
@@ -101,7 +101,5 @@ const getProductsData = () => {
         });
     });
 };
-
-
 
 export default getProductsData;

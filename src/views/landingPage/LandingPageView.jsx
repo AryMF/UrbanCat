@@ -64,11 +64,6 @@ const LandingPageView = () => {
 		return shuffled.slice(min);
 	}
 
-	useEffect(() =>{
-		getPromotions();
-		getCategorys();
-	},[]);
-
 	return (
 		<Styles.Container >
 			<Styles.TopSection>

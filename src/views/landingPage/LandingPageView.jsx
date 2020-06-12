@@ -1,5 +1,7 @@
 import React ,{useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
+import { getCategoriesData, getPromotionsData } from '../../controller/fetchInfo';
 
 import * as Styles from './LandingPage.Style';
 
@@ -8,9 +10,29 @@ const PromotionURL = 'https://genericapiv1.azurewebsites.net/v1/shop/promotions'
 const CategoriesURL = 'https://genericapiv1.azurewebsites.net/v1/shop/categories';
 
 const LandingPageView = () => {
-
+	const history = useHistory();
 	const[promo, setPromo]=useState([]);
-	const[category, setCategory]=useState([]);
+	const [categoryList, setCategoryList] = useState([]);
+	const [promotionList, setPromotionList] = useState([]);
+
+	const getcategory = async () => {
+		const data = await getCategoriesData();
+		setCategoryList(data);
+	};
+
+	const getPromotion = async () => {
+		const data = await getPromotionsData();
+		setPromotionList(data);
+	};
+
+	useEffect(() => {
+		getcategory();
+		getPromotion();
+	}, []);
+
+	const linkClickHandler = (direction) => {
+		history.push(direction);
+	};
 
 	const getPromotions = async () =>{
 		const response = await fetch(PromotionURL);
@@ -18,15 +40,6 @@ const LandingPageView = () => {
 		const promRandom = getRandomPromoElements(data,2);
 		setPromo(promRandom);
 		return promRandom;
-	};
-
-	const getCategorys = async () =>{
-		const response = await fetch(CategoriesURL);
-		const data = await response.json();
-		const categoRandom = getRandomCategoElements(data,3);
-		setCategory(categoRandom);
-		console.log(categoRandom);
-		return categoRandom;
 	};
 
 	function getRandomPromoElements(data,count ) {
@@ -57,34 +70,36 @@ const LandingPageView = () => {
 	},[]);
 
 	return (
-		<Styles.Grid >
-			<Styles.LinkPromo>
-				<Link to="/promotions" >Promotions</Link>
-			</Styles.LinkPromo>
-			<Styles.PromotionLarge>
-				<Styles.Img src="https://source.unsplash.com/random/1600x900/?bags"></Styles.Img>
-			</Styles.PromotionLarge>
-			<Styles.PromotionSmall>
-				<Styles.Img src="https://source.unsplash.com/random/1600x900/?shirts"></Styles.Img>
-			</Styles.PromotionSmall>
-			<Styles.LinkProdu>
-				<Link to="/categories" style={{'marginRight': '2em'}} >Products</Link>
-			</Styles.LinkProdu>
-			<Styles.Categories>
-				<Styles.Category>
-					<h1>Category</h1>
-					<Styles.Img src="https://source.unsplash.com/random/200x150/?sneakers"></Styles.Img>
-				</Styles.Category>
-				<Styles.Category>
-					<h1>Category</h1>
-					<Styles.Img src="https://source.unsplash.com/random/200x150/?shoes"></Styles.Img>
-				</Styles.Category>
-				<Styles.Category>
-					<h1>Category</h1>
-					<Styles.Img src="https://source.unsplash.com/random/200x150/?clocks"></Styles.Img>
-				</Styles.Category>
-			</Styles.Categories>
-		</Styles.Grid>
+		<Styles.Container >
+			<Styles.TopSection>
+				<Styles.StyledLabel
+					size={'18px'}
+					onClick={() => linkClickHandler('/promotions')}
+				>
+					PROMOTIONS
+				</Styles.StyledLabel>
+			</Styles.TopSection>
+			<Styles.BottomSection>
+				<Styles.Promotion>
+					<Styles.Img src="https://source.unsplash.com/random/1600x900/?backpack"></Styles.Img>
+				</Styles.Promotion>
+				<Styles.Promotion>
+					<Styles.Img2 src="https://source.unsplash.com/random/1600x900/?shirts"></Styles.Img2>
+				</Styles.Promotion>
+				<br/><br/>
+				<Styles.StyledLabel
+					size={'18px'}
+					onClick={() => linkClickHandler('/categories')}
+				>
+					PRODUCTS
+				</Styles.StyledLabel>
+				<Styles.Categories>
+					<Styles.Category src="https://source.unsplash.com/random/200x150/?sneakers" />
+					<Styles.Category src="https://source.unsplash.com/random/200x150/?shoes" />
+					<Styles.Category src="https://source.unsplash.com/random/200x150/?clocks" />
+				</Styles.Categories>
+			</Styles.BottomSection>
+		</Styles.Container>
 	);
 };
 

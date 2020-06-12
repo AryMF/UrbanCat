@@ -18,8 +18,8 @@ function PromotionPage(){
 	return(
 		<Styles.Container>
 			<Styles.Nav>
-				<span>Link Prueba</span>
-				<span>Buscador Prueba</span>
+				{/* <span>Link Prueba</span>
+				<span>Buscador Prueba</span> */}
 			</Styles.Nav>
 			<Styles.PromotionList>
 				{

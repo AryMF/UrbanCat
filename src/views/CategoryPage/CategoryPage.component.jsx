@@ -26,8 +26,8 @@ function CategoryPage(){
 
 		<Styles.Container>
 			<Styles.Nav>
-				<div>Link Prueba</div>
-				<div>Buscador Prueba</div>
+				{/* <div>Link Prueba</div>
+				<div>Buscador Prueba</div> */}
 			</Styles.Nav>
 			<Styles.CategoryList>
 				{

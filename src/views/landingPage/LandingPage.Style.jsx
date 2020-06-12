@@ -1,77 +1,97 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
-const Grid= styled.div`
-	display: grid;
-	grid-gap: 20px;
-	width: 95%;
-	margin: 0 auto;
-	grid-template-columns: repeat(3, minmax(150px, auto));
-	grid-template-rows: repeat(auto-fill, 1fr);
-	grid-area: "promotionLarge";
+const Container = styled.div`
+	width: 100vw;
+    height: calc(100vh - 124px); /*Header + Footer height*/
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const TopSection = styled.div `
+    width: calc(100vw - 40px);
+    height: 60px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+`;
+
+const BottomSection = styled.div `
+    width: calc(100vw - 40px);
+    height: fit-content;
+	margin-top: 10px;
+
+    display: flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
+const Promotion= styled.div`
+	width: 100%;
+    height: fit-content;
+    margin-bottom: 10px;
+	display: flex;
 	justify-content: center;
+`;
+
+const Img = styled.img`
+	width: 90%;
+	height: 380px;
+	object-fit: cover;
+	border-radius: 20px;
+`;
+const Img2 = styled.img`
+    width: 90%;
+	height: 170px;
+	object-fit: cover;
+	border-radius: 20px;
 	@media  (max-width: 768px) {
-		grid-template-columns:minmax(150px,1fr);
-		grid-auto-rows: minmax(50px, auto);
+
 	}
 `;
 
-const LinkPromo= styled.div`
-        grid-area: "LinkPromo" ;
-        grid-column: span 3;
+const Categories = styled.div `
+	width: 100%;
+    height: fit-content;
+	margin-bottom: 30px;
+
+	display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-items: center;
+
 `;
 
-const PromotionLarge= styled.ul`
-	background-color: red;
-	min-height: 50px;
-	grid-column: span 3;
-	position:relative;
-	/* &::before {
-			content: "PROMOTION 1";
-			background-color: rgba(0,0,0,0.5);
-			padding: 1rem;
-			color: white;
-			font-family: 'Lato', sans-serif;
-			font-size: 4vw;
-			position:absolute;
-			bottom: 5px;
-			width: 25%;
-	} */
+const Category = styled.img `
+		@media  (max-width: 768px) {
+			width: 90%;
+        	height: 200px;
+			object-fit: cover;
+		}
 `;
 
-const PromotionSmall= styled.ul`
-        min-height: 50px;
-        grid-column: 1/4;
+const StyledLabel = styled.label `
+    font-size: ${props => props.size};
+    color: ${props => props.theme.mainFontColor};
+    margin-left: ${props => props.margin};
 `;
 
-const LinkProdu= styled.div`
-        grid-column: span 3;
-        @media (max-width: 768px) {
-          align-self: flex-end;
-        }
+const LinkStyled = styled(Link) `
 `;
 
-const Categories = styled.div`
-        color:white;
-        grid-column: 1/4;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content:space-around;
-`;
-
-const Category = styled.figure`
-        min-width: 200px;
-        min-height: 200px;
-        margin: 0.5rem;
-        overflow: hidden;
-`;
-const Img = styled.img`
-        width: 50%;
-        border-radius: 20px;
-`;
-const Img2 = styled.img`
-        width: 40%;
-        border-radius: 20px;
-`;
-
-export {Grid ,Img, Categories, Category , PromotionLarge,PromotionSmall , LinkPromo ,LinkProdu};
+export {
+	Container,
+	TopSection,
+	BottomSection,
+	Promotion,
+	Img,
+	Img2,
+	Categories,
+	Category,
+	StyledLabel,
+};

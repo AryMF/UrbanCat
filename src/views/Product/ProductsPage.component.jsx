@@ -23,7 +23,7 @@ function ProductsPage() {
 	return(
 		<Style.ProductPageConatiner>
 			<Style.TopSection>
-				<label> Link </label>
+				{/* <label> Link </label> */}
 			</Style.TopSection>
 			<Style.BottomSection>
 				{

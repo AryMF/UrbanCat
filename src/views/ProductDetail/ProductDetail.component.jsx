@@ -66,7 +66,14 @@ function ProductDetail() {
 	return(
 		<Style.ProductPageConatiner>
 			<Style.TopSection>
-				<label style={{cursor: 'pointer'}} onClick={backToProducts} > {'<< BACK TO PRODUCT LIST'} </label>
+				<Style.StyledLabel
+					size={'16px'}
+					margin={'10px'}
+					style={{cursor: 'pointer'}}
+					onClick={backToProducts}
+				>
+					{'<< BACK TO PRODUCT LIST'}
+				</Style.StyledLabel>
 			</Style.TopSection>
 			<Style.BottomSection>
 				<Style.LeftPanel>

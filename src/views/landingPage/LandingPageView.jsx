@@ -69,22 +69,23 @@ const LandingPageView = () => {
                     </Styles.PromotionLarge>
                 
                     <Styles.PromotionSmall>
-                        <div>
-                        {/* <img src={}></img> */}
-                        </div>
+                      <Styles.Img src="https://source.unsplash.com/random/1600x900/?shirts"></Styles.Img>
                     </Styles.PromotionSmall>
                     <Styles.LinkProdu>
                     <Link>Productos</Link>
                     </Styles.LinkProdu>
                     <Styles.Categories>
                         <Styles.Category>
-                            <h1>Category</h1>
+                          <h1>Category</h1>
+                          <Styles.Img src="https://source.unsplash.com/random/200x150/?sneakers"></Styles.Img>
                         </Styles.Category>
                         <Styles.Category>
                             <h1>Category</h1>
+                            <Styles.Img src="https://source.unsplash.com/random/200x150/?shoes"></Styles.Img>
                         </Styles.Category>
                         <Styles.Category>
                             <h1>Category</h1>
+                            <Styles.Img src="https://source.unsplash.com/random/200x150/?clocks"></Styles.Img>
                         </Styles.Category>
                     </Styles.Categories>
                     
